@@ -1,0 +1,28 @@
+.card__section {
+  margin-top: 20px;
+}
+
+.card__name {
+  background-color: white;
+  border-radius: 4px;
+  position: relative;
+  top: -320px;
+  left: 106px;
+  padding: 2px 12px 2px 12px;
+  width: fit-content;
+}
+
+.card__image {
+  width: 328px;
+  height: 328px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}

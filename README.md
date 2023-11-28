@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+WTWT (What to Wear) Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Overview:
+-About
+-Structure
+-Links
 
-## Available Scripts
+About: This project's goal is to collect information from a Weather API and present it to the user and suggest outfits that would be the most appropriate in favor of the current weather. Using cards pictures of clothing and the Weather API single cards will be filtered through and chosen to rend when criterias have been met which will in the end create an outfit for the user.
 
-In the project directory, you can run:
+Sturcture:
 
-### `npm start`
+    Header Component
+    - Logo
+    - Loction of Weather
+    - Button to Added New Clothes
+    - Name
+    - Avatar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    WeatherCard
+    - Degrees
+    - Weather Images Depicting of Current Weather
+    - Sentence Suggestion of what to wear
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ItemCard
+    - Cards with the attribute of being click which will pull up a more detailed card of the item
 
-### `npm test`
+    Footer
+    - Name of Creator
+    - Year it was made
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    (Modals that are invoked)
+    Add Item Form
+    - Input for the name of Item
+    - Input for the Image URL of Item
+    - Toggle buttons to indicate where the item belongs in which criteria
+    - Submit Button
 
-### `npm run build`
+    Item Modal
+    - Expanded Image of Unique Item
+    - Name of Item
+    - Type of Weather that the Item belongs too.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Links:
+Figma Design: https://www.figma.com/file/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?type=design&node-id=311-1291&mode=design&t=QcHNCZlTtKNEvdcU-0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub Repository: https://github.com/Conmanz/se_project_react

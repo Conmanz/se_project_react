@@ -16,12 +16,23 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  line-height: 24px;
+}
+
+.header__clothes-button {
+  display: flex;
+  gap: 20px;
+  align-items: center;
   border: 0;
   background: none;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
+}
+
+.header__clothes-button:hover {
+  cursor: pointer;
 }
 
 .current__date {

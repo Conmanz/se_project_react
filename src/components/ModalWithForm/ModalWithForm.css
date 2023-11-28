@@ -58,3 +58,7 @@
   margin-top: 32px;
   border-radius: 5px;
 }
+
+.modal__submit-form {
+  cursor: pointer;
+}

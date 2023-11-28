@@ -1,31 +1,3 @@
-.card__section {
-  margin-top: 20px;
-}
-
-.card__name {
-  background-color: white;
-  border-radius: 4px;
-  position: relative;
-  top: -320px;
-  left: 106px;
-  padding: 2px 12px 2px 12px;
-  width: fit-content;
-}
-
-.card__image {
-  width: 328px;
-  height: 328px;
-  border-radius: 10px;
-}
-
-.card__items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
 .modal__name-input {
   display: flex;
   flex-direction: column;
@@ -77,6 +49,10 @@
   align-items: flex-start;
 }
 
+.hot__button:hover {
+  cursor: pointer;
+}
+
 .warm__input {
   display: flex;
   font-family: "Cabinet Grotesk", sans-serif;
@@ -85,12 +61,20 @@
   align-items: flex-start;
 }
 
+.warm__button:hover {
+  cursor: pointer;
+}
+
 .cold__input {
   display: flex;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   padding: 5px 0px 5px 0px;
   align-items: flex-start;
+}
+
+.cold__button:hover {
+  cursor: pointer;
 }
 
 .weather__text {

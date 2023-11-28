@@ -37,8 +37,13 @@ export const defaultClothingItems = [
   },
 ];
 
-// export const Latitude = 44.34;
+export const weatherOptions = [
+  { url: require("../images/Day/daySunny.svg").default, day: true, type: "sunny" },
+  { url: require("../images/Day/dayCloudy.svg").default, day: true, type: "cloudy" },
+  { url: require("../images/Night/nightCloudy.svg").default, day: false, type: "cloudy" },
+  { url: require("../images/Night/nightClear.svg").default, day: false, type: "clear" },
+];
+
 export const Longitude = -77.0364;
-// export const Longitude = 10.99;
 export const Latitude = 38.8951;
 export const APIkey = "a6131e2af517a6dcb7d1a39332349f40";
