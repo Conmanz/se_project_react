@@ -6,7 +6,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useEffect, useState, useMemo } from "react";
 import ItemModal from "../ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData, parseLocation } from "../../utils/WeatherApi";
-import { CurrentTemperatureUnitContext } from "../Contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../../Contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
