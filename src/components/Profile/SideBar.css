@@ -1,0 +1,16 @@
+.sideBar__container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sideBar__name {
+  display: flex;
+  margin-left: 16px;
+  margin-top: 10px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.sideBar__avatar {
+  display: flex;
+}

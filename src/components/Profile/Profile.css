@@ -1,0 +1,14 @@
+.profile__container {
+  position: relative;
+  display: flex;
+  gap: 130px;
+  left: 40px;
+}
+
+.clothes__section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
