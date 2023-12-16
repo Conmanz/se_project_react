@@ -16,15 +16,15 @@ function ClothesSection({ clothingItems, onCreateModal, onSelectCard }) {
   };
 
   return (
-    <section>
+    <>
       <div className="clothes__section-header">
         <p className="clothes__section-item">Your Items</p>
         <button type="button" className="add__clothesSection" onClick={onCreateModal}>
           +Add new
         </button>
       </div>
-      <div>{getClothingCards()}</div>
-    </section>
+      <div className="clothes__section-cards">{getClothingCards()}</div>
+    </>
   );
 }
 

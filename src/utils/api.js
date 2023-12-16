@@ -1,6 +1,6 @@
 const baseUrl = "http://localhost:3001";
 
-const processServerResponse = (res) => {
+export const processServerResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
