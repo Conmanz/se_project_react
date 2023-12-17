@@ -115,6 +115,8 @@ const App = () => {
     };
     addItem(item)
       .then((res) => {
+        // In mock server, a new item is added with an incremented id (ie if there are 17 items, new item will have id of 18)
+        // In order for new item to have the same position when added as when page is refreshed, need to add new item to end of array
         setClothingItems([...clothingItems, res]);
         handleCloseModal();
       })

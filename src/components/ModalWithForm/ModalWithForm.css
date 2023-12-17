@@ -53,10 +53,20 @@
   font-size: 16px;
   line-height: 20px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(0, 0, 0);
   padding: 8px 16px 8px 16px;
   margin-top: 32px;
   border-radius: 5px;
+}
+
+.modal__submit-form:hover {
+  color: white;
+  opacity: 60%;
+}
+
+.modal__submit-form:disabled {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .modal__submit-form {
