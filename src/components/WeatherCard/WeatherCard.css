@@ -1,15 +1,20 @@
 .weather {
-  position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
 }
 
 .weather__info {
-  position: absolute;
-  top: 12px;
-  left: 16px;
-  color: white;
-  font-size: 36px;
+    padding-left: 1.5%;
+    color: white;
+    font-size: 36px;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 1;
 }
 
 .weather__image {
-  width: 100%;
+    width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 1;
 }

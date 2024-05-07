@@ -65,7 +65,7 @@ const App = () => {
   };
 
   const handleOpenLoginModal = () => {
-    openModal("login");
+    openModal("logIn");
   };
 
   useEffect(() => {
