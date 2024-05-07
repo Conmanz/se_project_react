@@ -29,16 +29,13 @@ const App = () => {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temperature, setTemperature] = useState(undefined);
-  const [cityName, setCityName] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [filteredCards, setFilteredCards] = useState([]);
   const [clothingItems, setClothingItems] = useState([]);
   const [location, setLocation] = useState("");
-  const [showLoginModal, setShowLoginModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
 
   /** Clothing items the current user owns */
   const ownedItems = useMemo(() => {
@@ -48,7 +45,7 @@ const App = () => {
   const openModal = (modalType) => {
     setActiveModal(modalType);
     document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("click", handleClick);
+    document.addEventListener("click", handleOverlayClick);
   };
 
   const handleCreateModal = () => {
@@ -62,10 +59,6 @@ const App = () => {
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
-  };
-
-  const handleOpenLoginModal = () => {
-    openModal("logIn");
   };
 
   useEffect(() => {
@@ -115,13 +108,13 @@ const App = () => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Escape" && activeModal !== "") {
-      setActiveModal("");
+      handleCloseModal();
     }
   };
 
-  const handleClick = (e) => {
+  const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      setActiveModal("");
+      handleCloseModal();
     }
   };
 
@@ -313,7 +306,7 @@ const App = () => {
               setActiveModal("logIn");
             }}
             onCreateModal={handleCreateModal}
-            location={cityName}
+            location={location}
             isLoggedIn={loggedIn}
           />
           <Switch>
@@ -326,6 +319,7 @@ const App = () => {
                 onCardLike={handleCardLike}
               />
             </Route>
+            {/* renderProtectedProfile does not allow unauthorized user to get to profile page therefore the route is protected */}
             <Route path="/profile">{renderProtectedProfile()}</Route>
           </Switch>
           <Footer />
@@ -334,14 +328,14 @@ const App = () => {
               loading={loading}
               handleCloseModal={handleCloseModal}
               onAddItem={addCard}
-              handleClick={handleClick}
+              handleClick={handleOverlayClick}
             />
           )}
           {activeModal === "preview" && (
             <ItemModal
               selectedCard={selectedCard}
               onClose={handleCloseModal}
-              handleClick={handleClick}
+              handleClick={handleOverlayClick}
               showConfirmationModal={handleOpenConfirmationModal}
             />
           )}
@@ -349,7 +343,10 @@ const App = () => {
             <RegisterModal
               loading={loading}
               onClose={handleCloseModal}
-              openLoginModal={handleOpenLoginModal}
+              openLoginModal={() => {
+                handleCloseModal();
+                openModal("logIn");
+              }}
               registerUser={signupUser}
             />
           )}
@@ -358,6 +355,10 @@ const App = () => {
               loading={loading}
               onClose={handleCloseModal}
               registerUser={signupUser}
+              openRegisterModal={() => {
+                handleCloseModal();
+                openModal("signUp");
+              }}
               loginUser={loginUser}
             />
           )}

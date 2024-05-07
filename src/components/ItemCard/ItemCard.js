@@ -29,7 +29,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
                 onCardLike(id, isLiked);
               }}
             >
-              <img src={likeButtonImage} />
+              <img src={likeButtonImage} alt={"Button Like Image"} />
             </button>
           )}
         </div>
@@ -39,7 +39,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
               src={item.imageUrl}
               className="card__image"
               onClick={() => onSelectCard(item)}
-              alt={"card__image"}
+              alt={item.name}
             />
           </div>
         </div>

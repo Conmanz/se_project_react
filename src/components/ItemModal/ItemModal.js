@@ -30,7 +30,7 @@ const ItemModal = ({
         <img
           className="selected-card__image"
           src={selectedCard.imageUrl}
-          alt={"modal__image"}
+          alt={selectedCard.name}
         />
         <div className="selected-card__container">
           <div className="selected-card__name">{selectedCard.name}</div>

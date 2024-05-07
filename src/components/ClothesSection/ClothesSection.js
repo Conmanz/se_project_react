@@ -7,7 +7,7 @@ function ClothesSection({ clothingItems, onSelectCard, loggedIn, onCardLike }) {
     <div className="clothes__section">
       {clothingItems.map((item, index) => (
         <ItemCard
-          key={`ItemCard-${index}`}
+          key={`ItemCard-${item._id}`}
           item={item}
           onSelectCard={onSelectCard}
           loggedIn={loggedIn}
