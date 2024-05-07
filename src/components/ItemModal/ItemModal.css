@@ -1,29 +1,29 @@
-.close__button-item {
-  background-image: url(../../images/ItemCloseButton.svg);
-  width: 20px;
-  height: 20px;
-  border: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  cursor: pointer;
+.selected-card__close-button {
+    background-image: url(../../images/ItemCloseButton.svg);
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
 }
 
 .modal__container_item_view {
-  display: flex;
-  flex-direction: column;
-  max-width: 75vw;
-  max-height: 75vh;
-  height: auto;
-  width: auto;
-  padding: 0;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 75vw;
+    max-height: 75vh;
+    height: auto;
+    width: auto;
+    padding: 0;
+    position: relative;
 }
 
-.modal__container_item-title {
+/* .modal__container_item-title {
   font-family: "Cabinet-Grotest";
   font-style: normal;
   font-size: 20px;
@@ -33,39 +33,55 @@
   margin-top: 20px;
   margin-bottom: 32px;
   margin-left: 32px;
+} */
+
+.selected-card__image {
+    display: flex;
+    max-width: 75vh;
+    max-height: 75vh;
+    border-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.modal__image {
-  border-radius: 16px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+.selected-card__name {
+    position: relative;
+    display: flex;
+    /*padding: 15px 20px;*/
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    /*top: 1vh;*/
 }
 
-.item__name {
-  position: relative;
-  display: flex;
-  padding: 15px 20px;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
+.selected-card__weather {
+    display: flex;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
 }
 
-.selected__card-weather {
-  position: relative;
-  display: flex;
-  padding: 0px 0px 20px 19px;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
+.selected-card__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
 }
 
-.delete__card-weather {
-  position: absolute;
-  display: flex;
-  left: 370px;
-  top: 514px;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: red;
+.selected-card__delete-button {
+    /*position: relative;*/
+    display: flex;
+    background: none;
+    border: none;
+    /*left: 29vh;*/
+    /*bottom: 7vh;*/
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: red;
 }

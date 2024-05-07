@@ -1,0 +1,20 @@
+.modal__input-title {
+    display: flex;
+    flex-direction: column;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 3%;
+    padding-bottom: 1%;
+
+}
+
+.modal__input {
+    box-sizing: border-box;
+    border-bottom-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    max-width: 500px;
+    width: 100%;
+}

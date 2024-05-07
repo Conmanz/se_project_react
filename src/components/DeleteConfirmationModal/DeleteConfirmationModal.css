@@ -1,0 +1,77 @@
+.modal__confirm-content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 670px;
+    width: 100%;
+    height: 280px;
+    border-radius: 20px;
+    padding: 34px 36px
+}
+
+.modal__confirm-close {
+    background-image: url(../../images/ItemCloseButton.svg);
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+}
+
+.modal__confirm-text {
+    display: flex;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.modal__confirm-uppertext {
+    display: flex;
+    align-self: center;
+    position: absolute;
+    top: 70px;
+    left: 170px;
+}
+
+.modal__confirm-lowertext {
+    display: flex;
+    align-self: center;
+    position: absolute;
+    top: 100px;
+    left: 245px;
+}
+
+.modal__confirm-button {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: red;
+    top: 190px;
+    left: 280px;
+    position: absolute;
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal__cancel-button {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    background: none;
+    border: none;
+    position: absolute;
+    bottom: 85px;
+    left: 325px;
+    cursor: pointer;
+}

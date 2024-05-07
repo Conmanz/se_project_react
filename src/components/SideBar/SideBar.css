@@ -1,16 +1,50 @@
-.sideBar__container {
-  display: flex;
-  align-items: flex-start;
+.sideBar__container-userProfile {
+    display: flex;
+    align-items: flex-start;
 }
 
-.sideBar__name {
-  display: flex;
-  margin-left: 16px;
-  margin-top: 10px;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 700;
+.sideBar__profile-name {
+    display: flex;
+    margin-left: 16px;
+    margin-top: 10px;
+    font-family: "CabinetGrotesk-Bold", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 33px;
 }
 
-.sideBar__avatar {
-  display: flex;
+.sideBar__profile-avatar {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.sideBar__profile-change {
+    font-family: "CabinetGrotesk-Bold", Arial, Helvetica, sans-serif;
+    position: relative;
+    line-height: 25px;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    background: none;
+    border: none;
+    top: 10px;
+    left: -4px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.sideBar__profile-logout {
+    font-family: "CabinetGrotesk-Bold", Arial, Helvetica, sans-serif;
+    position: relative;
+    line-height: 25px;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    background: none;
+    border: none;
+    top: 15px;
+    left: -4px;
+    width: 200px;
+    cursor: pointer;
 }

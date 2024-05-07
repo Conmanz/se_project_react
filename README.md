@@ -5,7 +5,10 @@ Overview:
 -Structure
 -Links
 
-About: This project's goal is to collect information from a Weather API and present it to the user and suggest outfits that would be the most appropriate in favor of the current weather. Using cards pictures of clothing and the Weather API single cards will be filtered through and chosen to rend when criterias have been met which will in the end create an outfit for the user.
+About: This project's goal is to collect information from a Weather API and present it to the user and suggest outfits
+that would be the most appropriate in favor of the current weather. Using cards pictures of clothing and the Weather API
+single cards will be filtered through and chosen to rend when criterias have been met which will in the end create an
+outfit for the user.
 
 Sturcture:
 
@@ -41,6 +44,9 @@ Sturcture:
     - Type of Weather that the Item belongs too.
 
 Links:
-Figma Design: https://www.figma.com/file/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?type=design&node-id=311-1291&mode=design&t=QcHNCZlTtKNEvdcU-0
+Figma
+Design: https://www.figma.com/file/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?type=design&node-id=311-1291&mode=design&t=QcHNCZlTtKNEvdcU-0
+
+se_project_express: https://github.com/Conmanz/se_project_express
 
 GitHub Repository: https://github.com/Conmanz/se_project_react

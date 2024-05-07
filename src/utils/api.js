@@ -1,5 +1,15 @@
 const baseUrl = "http://localhost:3001";
 
+export const checkToken = (callback) => {
+  const jwt = localStorage.getItem("jwt");
+
+  if (jwt) {
+    return callback(jwt);
+  } else {
+    return Promise.reject("Error: jwt token is null");
+  }
+};
+
 export const processServerResponse = (res) => {
   if (res.ok) {
     return res.json();
@@ -17,19 +27,52 @@ export function getItems() {
 }
 
 export function addItem(item) {
-  return fetch(`${baseUrl}/items`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(item),
-  }).then(processServerResponse);
+  return checkToken((jwt) => {
+    return fetch(`${baseUrl}/items`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${jwt}`,
+      },
+      body: JSON.stringify(item),
+    }).then(processServerResponse);
+  });
 }
 
 export function removeItem(_id) {
-  return fetch(`${baseUrl}/items/${_id}`, {
-    method: "DELETE",
-  }).then(processServerResponse);
+  return checkToken((jwt) => {
+    return fetch(`${baseUrl}/items/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${jwt}`,
+      },
+    }).then(processServerResponse);
+  });
+}
+
+export function likeClothingItem(_id) {
+  return checkToken((jwt) => {
+    return fetch(`${baseUrl}/items/${_id}/likes`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${jwt}`,
+      },
+    }).then(processServerResponse);
+  });
+}
+
+export function dislikeClothingItem(_id) {
+  return checkToken((jwt) => {
+    return fetch(`${baseUrl}/items/${_id}/likes`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${jwt}`,
+      },
+    }).then(processServerResponse);
+  });
 }
 
 export function request(url, options) {

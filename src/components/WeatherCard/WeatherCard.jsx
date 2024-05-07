@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import "./WeatherCard.css";
 import { weatherOptions } from "../../utils/Constants";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
