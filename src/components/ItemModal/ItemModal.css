@@ -85,3 +85,12 @@
     font-size: 20px;
     color: red;
 }
+
+.selected-card__delete-button_hidden {
+    cursor: none;
+    visibility: hidden;
+}
+
+.selected-card__delete-button_visible {
+    cursor: pointer;
+}

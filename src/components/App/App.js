@@ -83,7 +83,7 @@ const App = () => {
 
     getItems()
       .then((items) => {
-        setClothingItems(items);
+        setClothingItems(items.reverse());
       })
       .catch((error) => {
         console.error("error:", error);
@@ -130,14 +130,25 @@ const App = () => {
   };
 
   const getWeatherType = () => {
+    let hot, cold;
+
+    /* Calculate hot & cold temps for currentTemperatureUnit */
+    if (currentTemperatureUnit === "F") {
+      hot = 86;
+      cold = 65;
+    } else if (currentTemperatureUnit === "C") {
+      hot = 30;
+      cold = (65 - 32) * (5 / 9);
+    }
+
     const weatherTemp = temperature?.temperature?.[currentTemperatureUnit];
 
-    if (weatherTemp >= 86) {
+    if (weatherTemp >= hot) {
       return "hot";
-    } else if (weatherTemp >= 66 && weatherTemp <= 85) {
-      return "warm";
-    } else if (weatherTemp <= 65) {
+    } else if (weatherTemp <= cold) {
       return "cold";
+    } else {
+      return "warm";
     }
   };
 
@@ -170,7 +181,7 @@ const App = () => {
       .then((res) => {
         // In mock server, a new item is added with an incremented id (ie if there are 17 items, new item will have id of 18)
         // In order for new item to have the same position when added as when page is refreshed, need to add new item to end of array
-        setClothingItems([...clothingItems, res]);
+        setClothingItems([res, ...clothingItems]);
         handleCloseModal();
       })
       .catch((error) => {
@@ -276,6 +287,7 @@ const App = () => {
           showEditProfileModal={showEditProfileModal}
           logoutUser={logoutUser}
           loggedIn={loggedIn}
+          onCardLike={handleCardLike}
         />
       );
     } else {

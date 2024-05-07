@@ -9,6 +9,7 @@ function Profile({
   showEditProfileModal,
   logoutUser,
   loggedIn,
+  onCardLike,
 }) {
   return (
     <div className="profile__container">
@@ -33,6 +34,7 @@ function Profile({
           onSelectCard={onSelectCard}
           onCreateModal={onCreateModal}
           loggedIn={loggedIn}
+          onCardLike={onCardLike}
         />
       </section>
     </div>
