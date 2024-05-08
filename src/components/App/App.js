@@ -266,7 +266,7 @@ const App = () => {
     setLoggedIn(false);
   };
 
-  const renderProtectedProfile = () => {
+  const RenderProtectedProfile = () => {
     if (loggedIn) {
       return (
         <Profile
@@ -318,7 +318,7 @@ const App = () => {
             {/* renderProtectedProfile does not allow unauthorized user to get to profile page therefore the route is protected */}
             <Route path="/profile">
               {/* According to the instructions, '/profile' is the only route that should be protected */}
-              {renderProtectedProfile()}
+              <RenderProtectedProfile />
             </Route>
           </Switch>
           <Footer />
