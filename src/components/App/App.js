@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import LoginModal from "../LoginModal/LoginModal";
 import { useEffect, useState, useMemo } from "react";
 import ItemModal from "../ItemModal/ItemModal";
@@ -16,7 +15,6 @@ import { CurrentUserContext } from "../../contexts/CurrentUser";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
-import { defaultClothingItems } from "../../utils/Constants";
 import { getItems, addItem, removeItem } from "../../utils/api";
 import * as api from "../../utils/api";
 import * as auth from "../../utils/auth";
@@ -44,12 +42,10 @@ const App = () => {
 
   const openModal = (modalType) => {
     setActiveModal(modalType);
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("click", handleOverlayClick);
   };
 
   const handleCreateModal = () => {
-    setActiveModal("create");
+    openModal("create");
   };
 
   const handleCloseModal = () => {
@@ -57,7 +53,7 @@ const App = () => {
   };
 
   const handleSelectedCard = (card) => {
-    setActiveModal("preview");
+    openModal("preview");
     setSelectedCard(card);
   };
 
@@ -146,7 +142,7 @@ const App = () => {
   };
 
   const handleOpenConfirmationModal = () => {
-    setActiveModal("delete");
+    openModal("delete");
   };
 
   const deleteCard = (cardToDelete) => {
@@ -300,10 +296,10 @@ const App = () => {
         >
           <Header
             onSignUp={() => {
-              setActiveModal("signUp");
+              openModal("signUp");
             }}
             onLogIn={() => {
-              setActiveModal("logIn");
+              openModal("logIn");
             }}
             onCreateModal={handleCreateModal}
             location={location}
@@ -320,7 +316,10 @@ const App = () => {
               />
             </Route>
             {/* renderProtectedProfile does not allow unauthorized user to get to profile page therefore the route is protected */}
-            <Route path="/profile">{renderProtectedProfile()}</Route>
+            <Route path="/profile">
+              {/* According to the instructions, '/profile' is the only route that should be protected */}
+              {renderProtectedProfile()}
+            </Route>
           </Switch>
           <Footer />
           {activeModal === "create" && (
