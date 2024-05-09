@@ -24,9 +24,9 @@ import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 
 /** HOC to protect routes */
-const ProtectedRoute = (Component) => (props) => {
-  if (props.loggedIn) {
-    return <Component {...props} />;
+const ProtectedRoute = ({ loggedIn, children }) => {
+  if (loggedIn) {
+    return children;
   } else {
     return <Redirect to="/" />;
   }
@@ -210,7 +210,6 @@ const App = () => {
   };
 
   const signupUser = (values) => {
-    console.log(`signupUser values: `, values);
     setLoading(true);
     auth
       .signUp(values)
@@ -275,8 +274,6 @@ const App = () => {
     setLoggedIn(false);
   };
 
-  const ProtectedProfile = ProtectedRoute(Profile);
-
   const showEditProfileModal = () => {
     openModal("edit");
   };
@@ -308,16 +305,18 @@ const App = () => {
                 onCardLike={handleCardLike}
               />
             </Route>
-            <Route path="/profile">
-              <ProtectedProfile
-                loggedIn={loggedIn}
-                cards={ownedItems}
-                onSelectCard={handleSelectedCard}
-                onCreateModal={handleCreateModal}
-                showEditProfileModal={showEditProfileModal}
-                logoutUser={logoutUser}
-                onCardLike={handleCardLike}
-              />
+            <Route exact path="/profile">
+              <ProtectedRoute loggedIn={loggedIn}>
+                <Profile
+                  loggedIn={loggedIn}
+                  cards={ownedItems}
+                  onSelectCard={handleSelectedCard}
+                  onCreateModal={handleCreateModal}
+                  showEditProfileModal={showEditProfileModal}
+                  logoutUser={logoutUser}
+                  onCardLike={handleCardLike}
+                />
+              </ProtectedRoute>
             </Route>
           </Switch>
           <Footer />
