@@ -23,6 +23,15 @@ import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 
+/** HOC to protect routes */
+const ProtectedRoute = (Component) => (props) => {
+  if (props.loggedIn) {
+    return <Component {...props} />;
+  } else {
+    return <Redirect to="/" />;
+  }
+};
+
 const App = () => {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -266,23 +275,7 @@ const App = () => {
     setLoggedIn(false);
   };
 
-  const RenderProtectedProfile = () => {
-    if (loggedIn) {
-      return (
-        <Profile
-          cards={ownedItems}
-          onSelectCard={handleSelectedCard}
-          onCreateModal={handleCreateModal}
-          showEditProfileModal={showEditProfileModal}
-          logoutUser={logoutUser}
-          loggedIn={loggedIn}
-          onCardLike={handleCardLike}
-        />
-      );
-    } else {
-      return <Redirect to="/" />;
-    }
-  };
+  const ProtectedProfile = ProtectedRoute(Profile);
 
   const showEditProfileModal = () => {
     openModal("edit");
@@ -315,10 +308,16 @@ const App = () => {
                 onCardLike={handleCardLike}
               />
             </Route>
-            {/* renderProtectedProfile does not allow unauthorized user to get to profile page therefore the route is protected */}
             <Route path="/profile">
-              {/* According to the instructions, '/profile' is the only route that should be protected */}
-              <RenderProtectedProfile />
+              <ProtectedProfile
+                loggedIn={loggedIn}
+                cards={ownedItems}
+                onSelectCard={handleSelectedCard}
+                onCreateModal={handleCreateModal}
+                showEditProfileModal={showEditProfileModal}
+                logoutUser={logoutUser}
+                onCardLike={handleCardLike}
+              />
             </Route>
           </Switch>
           <Footer />
