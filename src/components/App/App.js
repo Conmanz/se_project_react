@@ -19,18 +19,9 @@ import { getItems, addItem, removeItem } from "../../utils/api";
 import * as api from "../../utils/api";
 import * as auth from "../../utils/auth";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
-
-/** HOC to protect routes */
-const ProtectedRoute = ({ loggedIn, children }) => {
-  if (loggedIn) {
-    return children;
-  } else {
-    return <Redirect to="/" />;
-  }
-};
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 const App = () => {
   const [activeModal, setActiveModal] = useState("");
